@@ -21,6 +21,7 @@ from xbox.webapi.api.provider.userstats import UserStatsProvider
 from xbox.webapi.api.provider.screenshots import ScreenshotsProvider
 from xbox.webapi.api.provider.titlehub import TitlehubProvider
 from xbox.webapi.api.language import XboxLiveLanguage
+from xbox.webapi.api.provider.fetch import FetchProvider
 
 log = logging.getLogger('xbox.api')
 
@@ -63,6 +64,7 @@ class XboxLiveClient(object):
         self.userstats = UserStatsProvider(self)
         self.screenshots = ScreenshotsProvider(self)
         self.titlehub = TitlehubProvider(self)
+        self.fetch = FetchProvider(self)
 
     @property
     def xuid(self):
